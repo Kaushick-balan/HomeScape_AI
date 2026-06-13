@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>HomeScape AI</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- =========================
+  NAVBAR
+  ========================= -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      <i class="fa-solid fa-cube"></i>
+      <span>HomeScape AI</span>
+    </div>
+
+    <ul class="nav-links">
+
+      <li onclick="showPage('homePage')">
+        Home
+      </li>
+
+      <li onclick="showPage('servicesPage')">
+        Services
+      </li>
+
+      <li onclick="showPage('studio3D')">
+        3D Studio
+      </li>
+
+      <li onclick="showPage('designPage')">
+        Designs
+      </li>
+
+      <li onclick="showPage('aiChatPage')">
+        AI Chat
+      </li>
+
+      <li onclick="showPage('pricing')">
+        Pricing
+      </li>
+
+      <li onclick="showPage('contact')">
+        Contact
+      </li>
+
+    </ul>
+
+  </nav>
+
+  <!-- =========================
+  HOME PAGE
+  ========================= -->
+
+  <div id="homePage" class="page activePage">
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+      <div class="overlay"></div>
+
+      <div class="hero-content">
+
+        <h1>
+          Design Your <br>
+          <span>Dream Space</span>
+        </h1>
+
+        <p>
+          Transform your home with AI chatbot,
+          3D room simulator, expert consultations,
+          and professional contractors.
+        </p>
+
+        <div class="hero-buttons">
+
+          <button class="primary-btn">
+            <i class="fa-solid fa-cube"></i>
+            Try 3D Studio
+          </button>
+
+          <button class="secondary-btn" onclick="showPage('aiChatPage')">
+    AI Design Chat →
+</button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+    FEATURES SECTION
+    ========================= -->
+
+    <section class="features">
+
+      <div class="section-header">
+
+        <span>WHAT WE OFFER</span>
+
+        <h2>Everything You Need</h2>
+
+        <p>
+          From AI-powered design to complete renovation —
+          we cover every step of your dream home journey.
+        </p>
+
+      </div>
+
+      <div class="features-grid">
+
+        <!-- CARD 1 -->
+
+        <div class="feature-card">
+
+          <div class="icon">
+            <i class="fa-solid fa-cube"></i>
+          </div>
+
+          <h3>3D Room Simulator</h3>
+
+          <p>
+            Visualize and customize your room
+            with realistic 3D editing tools.
+          </p>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="feature-card">
+
+          <div class="icon">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+
+          <h3>AI Design Chat</h3>
+
+          <p>
+            Get instant renovation suggestions
+            using our smart AI assistant.
+          </p>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="feature-card">
+
+          <div class="icon">
+            <i class="fa-solid fa-user-group"></i>
+          </div>
+
+          <h3>Expert Designers</h3>
+
+          <p>
+            Book one-on-one calls with
+            professional interior experts.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+    CTA SECTION
+    ========================= -->
+
+    <section class="cta-section">
+
+      <div class="cta-overlay">
+
+        <h1>
+          Ready to Transform Your Space?
+        </h1>
+
+        <p>
+          Start your renovation journey
+          with AI-powered interior planning.
+        </p>
+
+        <div class="cta-buttons">
+
+          <button class="primary-btn">
+            View Pricing
+          </button>
+
+          <button class="secondary-btn">
+            Contact Us
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- =========================
+  DESIGN PAGE
+  ========================= -->
+  <div id="designPage" class="page">
+
+    <section class="design-page">
+
+      <div class="design-layout">
+
+        <aside class="design-sidebar">
+          <div class="design-sidebar-inner">
+
+            <div class="design-sidebar-heading">
+              <p>DESIGN STARTER KIT</p>
+              <h2>Sample Designs</h2>
+              <span>Click a card to view steps</span>
+            </div>
+
+            <div class="design-samples" id="designSamples">
+
+              <button
+                class="design-sample-btn active"
+                type="button"
+                data-design-id="modernLiving"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80"
+                  alt="Modern living room design"
+                />
+                <span>Modern Living Room</span>
+              </button>
+
+              <button
+                class="design-sample-btn"
+                type="button"
+                data-design-id="scandiBedroom"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2f5b?auto=format&fit=crop&w=800&q=80"
+                  alt="Scandinavian bedroom design"
+                />
+                <span>Scandinavian Bedroom</span>
+              </button>
+
+              <button
+                class="design-sample-btn"
+                type="button"
+                data-design-id="contempKitchen"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=800&q=80"
+                  alt="Contemporary kitchen design"
+                />
+                <span>Contemporary Kitchen</span>
+              </button>
+
+            </div>
+          </div>
+        </aside>
+
+        <main class="design-main">
+
+          <div class="design-main-header">
+            <p class="design-step-kicker">STEP-BY-STEP PLAN</p>
+            <h1 id="designTitle">Modern Living Room</h1>
+            <p id="designSubtitle">
+              A simple, realistic workflow to plan layout, materials, lighting, and finishing touches.
+            </p>
+          </div>
+
+          <div class="design-preview">
+            <img
+              id="designPreviewImg"
+              src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80"
+              alt="Selected design preview"
+            />
+          </div>
+
+          <div class="design-steps" id="designSteps">
+            <!-- Steps get rendered by client/app.js -->
+          </div>
+
+        </main>
+      </div>
+    </section>
+  </div>
+
+  <!-- =========================
+  AI CHAT PAGE
+  ========================= -->
+  <div id="aiChatPage" class="page">
+    <section class="ai-chat-section">
+      <div class="chat-layout">
+        <!-- Main Chat Section -->
+        <div class="chat-main">
+          <header class="chat-header">
+            <h1 class="chat-title">AI Home Design Assistant</h1>
+            <p class="chat-subtitle">Your intelligent companion for creating perfect room plans and architectural blueprints</p>
+          </header>
+
+          <div class="chat-container" id="chatContainer">
+            <!-- Typing Indicator -->
+            <div class="message ai" id="typingIndicator" style="display: none;">
+              <div class="message-avatar">
+                <i class="fas fa-robot"></i>
+              </div>
+              <div class="typing-indicator">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-section">
+            <div class="input-container">
+              <div class="input-wrapper">
+                <input 
+                  type="text" 
+                  class="chat-input" 
+                  id="chatInput" 
+                  placeholder="Describe your dream space..."
+                  onkeypress="handleChatKeyPress(event)"
+                >
+              </div>
+              <div class="input-actions">
+                <button class="input-btn" onclick="attachChatFile()">
+                  <i class="fas fa-paperclip"></i>
+                </button>
+                <button class="input-btn" onclick="startChatVoiceInput()">
+                  <i class="fas fa-microphone"></i>
+                </button>
+                <button class="input-btn send-btn" onclick="sendChatMessage()">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Panel -->
+        <aside class="chat-right-panel">
+          <div class="project-summary glass-card hover-lift">
+            <h3 class="summary-title">Project Summary</h3>
+            
+            <div class="summary-item">
+              <div class="summary-label">Room Type</div>
+              <div class="summary-value" id="roomType">Not specified</div>
+            </div>
+            
+            <div class="summary-item">
+              <div class="summary-label">Budget</div>
+              <div class="summary-value" id="budget">Not specified</div>
+            </div>
+            
+            <div class="summary-item">
+              <div class="summary-label">Timeline</div>
+              <div class="summary-value" id="timeline">Not specified</div>
+            </div>
+            
+            <div class="summary-item">
+              <div class="summary-label">Preferred Style</div>
+              <div class="summary-value" id="style">Not specified</div>
+            </div>
+          </div>
+
+          <button class="generate-btn hover-lift" onclick="generateChatBlueprint()">
+            <i class="fas fa-drafting-compass"></i> Generate Blueprint
+          </button>
+
+          <!-- Additional Features -->
+          <div class="glass-card hover-lift" style="padding: 20px; margin-top: 20px;">
+            <h4 style="margin-bottom: 16px; color: var(--text-primary);">Quick Actions</h4>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <button style="padding: 12px; border-radius: 8px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-primary); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='var(--accent)'" onmouseout="this.style.background='var(--glass-bg)'">
+                <i class="fas fa-save"></i> Save Project
+              </button>
+              <button style="padding: 12px; border-radius: 8px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-primary); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='var(--accent)'" onmouseout="this.style.background='var(--glass-bg)'">
+                <i class="fas fa-share"></i> Share Design
+              </button>
+              <button style="padding: 12px; border-radius: 8px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-primary); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.background='var(--accent)'" onmouseout="this.style.background='var(--glass-bg)'">
+                <i class="fas fa-download"></i> Export PDF
+              </button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <!-- =========================
+  SERVICES PAGE
+  ========================= -->
+
+  <div id="servicesPage" class="page">
+
+    <section class="services-page">
+
+      <div class="service-heading">
+
+        <p>OUR SERVICES</p>
+
+        <h1>
+          Design & Renovation Services
+        </h1>
+
+        <span>
+          From expert consultations
+          to full renovations.
+        </span>
+
+      </div>
+
+      <!-- CONSULTATION SECTION -->
+
+      <div class="service-category">
+
+        <h2>📞 Expert Consultations</h2>
+
+        <div class="service-cards">
+
+          <!-- CARD 1 -->
+
+          <div class="service-card">
+
+            <div class="badge">
+              Most Popular
+            </div>
+
+            <div class="icon-box">
+              📞
+            </div>
+
+            <h3>Expert Design Call</h3>
+
+            <p>
+              1-hour video call with
+              a certified interior designer.
+            </p>
+
+            <div class="price">
+              $99 <span>/ 1 hour</span>
+            </div>
+
+            <button>
+              Book Now →
+            </button>
+
+          </div>
+
+          <!-- CARD 2 -->
+
+          <div class="service-card">
+
+            <div class="badge">
+              Best Value
+            </div>
+
+            <div class="icon-box">
+              👥
+            </div>
+
+            <h3>Premium Design Session</h3>
+
+            <p>
+              Extended 2-hour session
+              with senior designers.
+            </p>
+
+            <div class="price">
+              $179 <span>/ 2 hours</span>
+            </div>
+
+            <button>
+              Book Now →
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+  <!-- =========================
+RENOVATION CONTRACTORS
+========================= -->
+
+<div class="service-category">
+
+    <h2>🛠 Renovation Contractors</h2>
+
+    <div class="service-grid">
+
+        <!-- CARD 1 -->
+
+        <div class="service-card">
+
+            <div class="badge">
+                All-in-One
+            </div>
+
+            <div class="icon-box">
+                🔧
+            </div>
+
+            <h3>Full Renovation Package</h3>
+
+            <p>
+                Complete room renovation from demolition
+                to finishing. Includes project management,
+                materials, and labor.
+            </p>
+
+            <div class="bottom-row">
+
+                <div class="price">
+                    <span>From $2,500</span>
+                </div>
+
+                <button>
+                    Get Quote →
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="service-card">
+
+            <div class="badge">
+                Specialized
+            </div>
+
+            <div class="icon-box">
+                🔨
+            </div>
+
+            <h3>Kitchen Remodel</h3>
+
+            <p>
+                Specialized kitchen renovation including
+                cabinets, countertops, backsplash,
+                and appliance installation.
+            </p>
+
+            <div class="bottom-row">
+
+                <div class="price">
+                    <span>From $4,000</span>
+                </div>
+
+                <button>
+                    Get Quote →
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="service-card">
+
+            <div class="badge">
+                Specialized
+            </div>
+
+            <div class="icon-box">
+                🚿
+            </div>
+
+            <h3>Bathroom Remodel</h3>
+
+            <p>
+                Complete bathroom makeover including
+                fixtures, tiling, plumbing,
+                and waterproofing.
+            </p>
+
+            <div class="bottom-row">
+
+                <div class="price">
+                    <span>From $3,000</span>
+                </div>
+
+                <button>
+                    Get Quote →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+HIRE WORKERS
+========================= -->
+
+<div class="service-category">
+
+    <h2>👷 Hire Specific Workers</h2>
+
+    <div class="workers-grid">
+
+        <div class="worker-card">
+            <div class="worker-icon">🎨</div>
+            <h3>Painter</h3>
+            <span>$40/hr</span>
+        </div>
+
+        <div class="worker-card">
+            <div class="worker-icon">⚡</div>
+            <h3>Electrician</h3>
+            <span>$65/hr</span>
+        </div>
+
+        <div class="worker-card">
+            <div class="worker-icon">🚿</div>
+            <h3>Plumber</h3>
+            <span>$60/hr</span>
+        </div>
+
+        <div class="worker-card">
+            <div class="worker-icon">🔨</div>
+            <h3>Carpenter</h3>
+            <span>$55/hr</span>
+        </div>
+
+        <div class="worker-card">
+            <div class="worker-icon">🔧</div>
+            <h3>Tiler</h3>
+            <span>$50/hr</span>
+        </div>
+
+        <div class="worker-card">
+            <div class="worker-icon">👷</div>
+            <h3>General Worker</h3>
+            <span>$35/hr</span>
+        </div>
+
+    </div>
+
+</div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script src="app.js"></script>
+
+</body>
+
+</html>
